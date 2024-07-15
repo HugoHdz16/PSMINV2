@@ -1,0 +1,158 @@
+/* Parte superior Cabecera*/
+.header-bg {
+  background-image: url('/assets/cabecerafondo.jpg'); /* Ajusta la ruta de la imagen */
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70px;
+    position: fixed; /* Fija la cabecera en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+  height: 70px; /*Altura del logo */
+  width: auto;
+}
+
+.header-bar {
+  background-color: rgb(218, 196, 150);
+  height: 25px; /* Ajusta la altura de la barra */
+  position: fixed;
+  top: 70px; /* Ajusta esta posición según la altura de la cabecera */
+  left: 0;
+  right: 0;
+  z-index: 998; /* Asegura que la barra esté justo debajo de la cabecera */
+  margin: 0;
+}
+
+.social-icons {
+  position: fixed;
+  top: 30%;
+  transform: translateY(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Asegura que los íconos estén en una columna vertical */
+  background-color: rgb(218, 196, 150);
+  padding: 9px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: resize .5s; 
+}
+
+.social-icons i {
+  font-size: 24px;
+  margin: 10px 0; /* Espacio entre los íconos */
+  text-decoration: none;
+  color: #000; /* Cambia el color según tus necesidades */
+  font-size: 24px;
+}
+.social-icons img.custom-icon {
+  width: 24px;
+  height: 24px;
+}
+
+body {
+  background-image: url('/assets/fondo3.jpeg');
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+
+}
+
+@keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(-20px); 
+    }
+    to { 
+      opacity: 5; 
+      transform: translateY(0); 
+    }
+  }
+.login-container  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     width: 100%; 
+     padding: 50px;
+     border-radius: 50px;
+    transition: border-color 0.3s, transform 0.3s
+    align-items center; /* Centra verticalmente */
+    animation: resize .5s; /* Animación de cambio de tamaño */
+    
+}
+
+@keyframes resize {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login-card {
+    background-color: rgb(218, 196, 150);
+    border-radius: 25px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    animation: fadeIn 1s;
+     margin-top: 100px
+}
+
+.login-card-body {
+    padding: 18px;
+    font-family: Arial, sans-serif;
+
+}
+.login-card .form-group input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s, transform 0.3s;
+  
+}
+.login-card .btn-primary {
+    background-color: #000000;
+    border: none;   
+    width: 100%;
+    padding: 10px;
+    background-color: #151515;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+
+}
+.login-card .btn-primary:hover {
+    background-color:  #393c3f;
+        transform: scale(1.0);
+}
+.login-card .form-check-label {
+    font-size: 14px;
+}
+.login-card .text-center a {
+    font-size: 14px;
+    display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+
+}
