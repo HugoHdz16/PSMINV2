@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'editar', component: EditarComponent 
   },
   { 
-    path: 'Etiqueta', component: EtiquetaComponent 
+    path: 'etiqueta', component: EtiquetaComponent 
   }
 ];
 
