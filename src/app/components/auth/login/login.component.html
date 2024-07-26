@@ -2,46 +2,52 @@
 
 <header class="header-bg">
     <div class="container d-flex align-items-center">
-      <img src="/assets/logo.jpg" alt="Logo" class="logo">
-      <div class="social-icons">
-        <a href="https://www.facebook.com/powerstarmex/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://api.whatsapp.com/send?phone=528134530394&text=Buen%20d%C3%ADa,%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n." target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://twitter.com/powerstarmex?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://powerstarmex.com/#/home" target="_blank">
-            <img src="assets/favicon.jpeg" alt="Custom Website" class="custom-icon">
-        </a>
-      </div>
-    </div>
-  </header>
-  <div class="header-bar"></div>
-  <body>
-<div class="login-container">
-    <div class="login-card">
-        <div class="login-card-body">
-            <h4 class="text-center">Ingresar</h4>
-            <form>
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <label for="usuario">Usuario</label>    
-                    <input type="text" class="" id="usuario" placeholder="000"> 
-                </div>
-                <div class="form-group form-check">
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-lock"></i>
-                    <label for="clave">Clave</label>
-                    <input type="password" class="form-control" id="clave" placeholder="**********">
-                </div>  
-                <div class="form-group form-check">
-                </div>
-                <button class="btn btn-primary btn-block" routerLink="index">Ingresar</button>
-                <div class="text-center mt-2">
-                    <a href="index">¿Olvidó su contraseña?</a>      
-                </div>
-                <p class="text-center mt-3">Fecha versión: 2024.06.10.1502</p>
-                <p class="text-center">192.168.1.2\SQL2012PSM INVENTARIO</p>
-            </form>
+        <img src="/assets/logo.jpg" alt="Logo" class="logo">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/powerstarmex/?locale=es_LA" target="_blank"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=528134530394&text=Buen%20d%C3%ADa,%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n."
+                target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://twitter.com/powerstarmex?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://powerstarmex.com/#/home" target="_blank">
+                <img src="assets/favicon.jpeg" alt="Custom Website" class="custom-icon">
+            </a>
         </div>
     </div>
+</header>
+<div class="header-bar"></div>
+
+<div class="body">
+
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-card-body">
+                <h4 class="text-center">Ingresar</h4>
+                <form (submit)="SignIn()">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <label for="usuario">Usuario</label>
+                        <input type="text" id="username" placeholder="000" name="username" [(ngModel)]="user.username" >
+                    </div>
+                    <div class="form-group form-check">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <label for="clave">Clave</label>
+                        <input type="password" class="form-control" id="clave" placeholder="**********" name="password" [(ngModel)]="user.password">
+                    </div>
+                    <div class="form-group form-check">
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+                    <div class="text-center mt-2">
+                        <a href="index">¿Olvidó su contraseña?</a>
+                    </div>
+                    <p class="text-center mt-3">Fecha versión: 2024.06.10.1502</p>
+                    <p class="text-center">192.168.1.2\SQL2012PSM INVENTARIO</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
-</body>

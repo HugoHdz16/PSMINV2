@@ -15,6 +15,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { EditarComponent } from './components/editar/editar.component';
 import { AgregarComponent } from './components/agregar/agregar.component';
 import { EtiquetaComponent } from './components/etiqueta/etiqueta.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { EtiquetaComponent } from './components/etiqueta/etiqueta.component';
     BrowserAnimationsModule, // Agregado
     MatMenuModule,           // Agregado
     MatButtonModule,         // Agregado
-    MatIconModule            // Agregado
+    MatIconModule,           // Agregado
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),
