@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -8,21 +10,33 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './agregar.component.css'
 })
 export class AgregarComponent {
-  equipmentForm: FormGroup;
+  
 
-  constructor(private fb: FormBuilder) {
-    this.equipmentForm = this.fb.group({
-      EID: [''],
-      name: [''],
-      type: [''],
-      serial: [''],
-      purchaseDate: [''],
-      warranty: [''],
-      vendor: ['']
-    });
+  constructor(private fb: FormBuilder, private apiService: ApiService, private tr: ToastrService) {}
+  
+  equipo = {
+
+    NumUnico: '',
+    EID: '',
+    NombreA: '',
+    TipoEquipo: '',
+    NoSerie: '',
+    Fecha: '',
+    Garantia: '',
+    Marca: '',
+    Modelo: '',
+    Observacion: '',
+    Activo: '',
+    Color: ''
+
   }
 
-  onSubmit() {
-    console.log(this.equipmentForm.value);
+
+  AddDevice(){
+    this.apiService.AddDevice(this.equipo).subscribe(x => {
+      this.tr.success("Equipo agregado con exito.")
+    })
   }
+
 }
+

@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <img src="/assets/logo.jpg" alt="Logo" width="auto" height="70px" class="d-inline-block align-text-top">
     <a class="navbar-brand" href="app-login"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -11,12 +12,12 @@
           <a class="nav-link active" aria-current="page" href="index">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page"href="agregar">Agregar Dispositivo</a>
+          <a class="nav-link active" aria-current="page" href="agregar">Agregar Dispositivo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="editar">Editar Inventario</a>
         </li>
-    
+
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="etiqueta">Generar Etiqueta</a>
         </li>
@@ -28,31 +29,38 @@
   </div>
 </nav>
 <div class="header-bar"></div>
-<body>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-header">
-        <h2>Agregar Equipo al Inventario</h2>
-      </div>
-      <div class="form-group">
-        <label for="equipmentName">Número único</label>
-        <input type="text" class="form-control" id="equiponombre" formControlName="name" placeholder="Ingrese el Número único">
-      </div>
-      <div class="form-container">
-        <div class="form-group">
-          <label for="equipmentType">Dispositivo o Equipo</label>
-          <select class="form-control" id="equipmentType" formControlName="type">
-            <option>EID</option>
-            <option>DID</option>
-          </select>
+
+<form (submit)="AddDevice()" > 
+  <div class="body">
+    <div class="card-container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Agregar Equipo al Inventario</h2>
         </div>
+        <div class="form-group">
+          <label for="equipmentName">Número único</label>
+          <input type="text" class="form-control" id="equiponombre" name="noU"
+            placeholder="Ingrese el Número único" [(ngModel)]="equipo.NumUnico">
+        </div>
+  
+        <div class="form-container">
           <div class="form-group">
-            <label for="equipmentName">Nombre del Usuario Asignado</label>
-            <input type="text" class="form-control" id="equiponombre" formControlName="name" placeholder="Ingrese el nombre del usuario">
+            <label for="equipmentType">Dispositivo o Equipo</label>
+            <select class="form-select" id="equipmentType"  name="EID"  [(ngModel)]="equipo.EID">
+              <option>EID</option>
+              <option>DID</option>
+            </select>
+
           </div>
           <div class="form-group">
+            <label for="equipmentName">Nombre del Usuario Asignado</label>
+            <input type="text" class="form-control" id="equiponombre" 
+              placeholder="Ingrese el nombre del usuario" name="name"  [(ngModel)]="equipo.NombreA">
+          </div>
+
+          <div class="form-group">
             <label for="equipmentType">Tipo de Equipo</label>
-            <select class="form-control" id="equipotipo" formControlName="type">
+            <select class="form-control" id="equipotipo"  name="type"  [(ngModel)]="equipo.TipoEquipo">
               <option>Computadora</option>
               <option>Impresora</option>
               <option>Monitor</option>
@@ -63,53 +71,62 @@
           </div>
           <div class="form-group">
             <label for="serialNumber">Número de Serie</label>
-            <input type="text" class="form-control" id="serialNumber" formControlName="numserie" placeholder="Ingrese el número de serie">
+            <input type="text" class="form-control" id="serialNumber" name="numserie"  [(ngModel)]="equipo.NoSerie"
+              placeholder="Ingrese el número de serie">
           </div>
           <div class="form-group">
             <label for="purchaseDate">Fecha de Compra</label>
-            <input type="date" class="form-control" id="purchaseDate" formControlName="fechacompra">
+            <input type="date" class="form-control" id="purchaseDate" name="fecha" [(ngModel)]="equipo.Fecha"> 
           </div>
           <div class="form-group">
             <label for="warranty">Garantía (meses)</label>
-            <input type="number" class="form-control" id="warranty" formControlName="garantia" placeholder="Ingrese la duración de la garantía en meses">
+            <input type="number" class="form-control" id="warranty" name="garantia" [(ngModel)]="equipo.Garantia"
+              placeholder="Ingrese la duración de la garantía en meses">
           </div>
           <div class="form-group">
             <label for="vendor">Marca</label>
-            <input type="text" class="form-control" id="equipomarca" formControlName="marca" placeholder="Ingrese la marca del equipo">
+            <input type="text" class="form-control" id="equipomarca" name="marca" [(ngModel)]="equipo.Marca"
+              placeholder="Ingrese la marca del equipo">
           </div>
           <div class="form-group">
             <label for="vendor">Modelo</label>
-            <input type="text" class="form-control" id="modeloequipo" formControlName="modeloequipo" placeholder="Ingrese el modelo del equipo">
+            <input type="text" class="form-control" id="modeloequipo" name="modeloequipo" [(ngModel)]="equipo.Modelo"
+              placeholder="Ingrese el modelo del equipo">
           </div>
           <div class="form-group">
             <label for="vendor">Observación</label>
-            <input type="text" class="form-control" id="obequipo" formControlName="observacion" placeholder="Observación sobre el equipo">
+            <input type="text" class="form-control" id="obequipo" name="observacion" [(ngModel)]="equipo.Observacion"
+              placeholder="Observación sobre el equipo">
           </div>
-            <div class="form-group">
-              <label for="equipmentType">Activo o Desincorporado</label>
-              <select class="form-control" id="equipmentType" formControlName="type">
-                <option>Activado</option>
-                <option>Desincorporado</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="vendor">Color</label>
-              <input type="text" class="form-control" id="vendor" formControlName="vendor" placeholder="Ingrese el color del equipo o accesorio">
-            </div>
-
-         
+          <div class="form-group">
+            <label for="equipmentType">Activo o Desincorporado</label>
+            <select class="form-control" id="equipmentType"  name="type" [(ngModel)]="equipo.Activo"> 
+              <option>Activado</option>
+              <option>Desincorporado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vendor">Color</label>
+            <input type="text" class="form-control" id="vendor"  name="vendor" [(ngModel)]="equipo.Color"
+              placeholder="Ingrese el color del equipo o accesorio">
+          </div>
+  
+  
           <button type="submit" class="btn btn-success">Agregar Equipo</button>
+        </div>
       </div>
     </div>
-  </div>
   
-</body>
+  </div>
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</form>
 
 
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">

@@ -6,6 +6,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegistrarComponent } from './components/auth/registrar/registrar.component';
 import { IndexComponent } from './components/index/index.component';
 
+import { ToastrModule} from 'ngx-toastr';
+
 // Importaciones de Angular Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
@@ -15,7 +17,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { EditarComponent } from './components/editar/editar.component';
 import { AgregarComponent } from './components/agregar/agregar.component';
 import { EtiquetaComponent } from './components/etiqueta/etiqueta.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -36,7 +38,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatButtonModule,         // Agregado
     MatIconModule,           // Agregado
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({timeOut: 15000, closeButton: true, progressBar: true})
   ],
   providers: [
     provideClientHydration(),
@@ -45,3 +49,5 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

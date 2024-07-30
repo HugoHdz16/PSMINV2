@@ -58,7 +58,7 @@
   margin: 0;
 } 
 
-   body {
+   .body {
       background-image: url('/assets/indexfondo.jpg');
       margin: 0;
       padding: 0;

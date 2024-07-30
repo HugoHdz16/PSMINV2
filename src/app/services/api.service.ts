@@ -27,6 +27,12 @@ export class ApiService {
 
   //consumo de inventario
 
+  AddDevice(device:any){
+
+    return this.http.post<any>(this.URL + 'postDev', device);
+
+  }
+
   GetDevice(){
     return this.http.get(this.URL + '');
   }
