@@ -30,49 +30,53 @@
 </nav>
 <div class="header-bar"></div>
 
-<div class="body"></div>
+<div class="body">
 
-<div class="container mt-5">
-  <h2>Inventario de Equipos</h2>
-  <!-- Tabla para mostrar los inventarios -->
-  <table class="table table-striped">
-    <thead class="thead-dark">
-      <tr>
-        <th style="width: 10%">NumUnico</th>
-        <th style="width: 5%">EID</th>
-        <th style="width: 15%">Usuario</th>
-        <th style="width: 10%">TipoEquipo</th>
-        <th style="width: 10%">NumSerie</th>
-        <th style="width: 10%">Fecha</th>
-        <th style="width: 5%">Garantia</th>
-        <th style="width: 5%">Marca</th>
-        <th style="width: 5%">Modelo</th>
-        <th style="width: 10%">Observación</th>
-        <th style="width: 13%">ActDes</th>
-        <th style="width: 10%">Color</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let Inventario of Inventario1">
-        <td> {{Inventario.NumUnico}} </td>
-        <td> {{Inventario.EID}} </td>
-        <td> {{Inventario.NombreA}} </td>
-        <td> {{Inventario.TipoEquipo}} </td>
-        <td> {{Inventario.NoSerie}} </td>
-        <td> {{Inventario.Fecha}} </td>
-        <td> {{Inventario.Garantia}} </td>
-        <td> {{Inventario.Marca}} </td>
-        <td> {{Inventario.Modelo}} </td>
-        <td> {{Inventario.Observacion}} </td>
-        <td> {{Inventario.Activo}} </td>
-        <td> {{Inventario.Color}} </td>
-      </tr>
-    </tbody>
-  </table>
-  <!-- Botones para acciones CRUD -->
-  <button type="button" class="btn btn-sm btn-primary me-2">Editar</button>
-  <button type="button" class="btn btn-sm btn-danger">Eliminar</button>
+
+  <div class="container mt-5">
+    <h2>Inventario de Equipos</h2>
+    <!-- Tabla para mostrar los inventarios -->
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th style="width: 10%">NumUnico</th>
+          <th style="width: 5%">EID</th>
+          <th style="width: 15%">Usuario</th>
+          <th style="width: 10%">TipoEquipo</th>
+          <th style="width: 10%">NumSerie</th>
+          <th style="width: 10%">Fecha</th>
+          <th style="width: 5%">Garantia</th>
+          <th style="width: 5%">Marca</th>
+          <th style="width: 5%">Modelo</th>
+          <th style="width: 10%">Observación</th>
+          <th style="width: 13%">ActDes</th>
+          <th style="width: 10%">Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Inventario of Inventario1">
+          <td> {{Inventario.NumUnico}} </td>
+          <td> {{Inventario.EID}} </td>
+          <td> {{Inventario.NombreA}} </td>
+          <td> {{Inventario.TipoEquipo}} </td>
+          <td> {{Inventario.NoSerie}} </td>
+          <td> {{Inventario.Fecha}} </td>
+          <td> {{Inventario.Garantia}} </td>
+          <td> {{Inventario.Marca}} </td>
+          <td> {{Inventario.Modelo}} </td>
+          <td> {{Inventario.Observacion}} </td>
+          <td> {{Inventario.Activo}} </td>
+          <td> {{Inventario.Color}} </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Botones para acciones CRUD -->
+    <button type="button" class="btn btn-sm btn-primary me-2">Editar</button>
+    <button type="button" class="btn btn-sm btn-danger">Eliminar</button>
+  </div>
+
 </div>
+
 
 
 
