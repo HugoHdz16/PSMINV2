@@ -13,13 +13,15 @@ exports.getIn = async (req, res) => {
 }
 
 //Metodo para Agregar un nuevo dispositivo
-exports.AddDevice = async (res, req) => {
+exports.AddDevice = async (req, res) => {
 
-    const { NumUnico, EID, NombreA, TipoEquipo, NoSerie, Fecha, Garantia, Marca, Modelo, Observacion, Activo, Color } = req.body
+    const { NumUnico, EID, NombreA, TipoEquipo, NoSerie, Fecha, Garantia, Marca, Modelo, Observacion, Activo, Color } = req.body;
 
-    const newDevice = new inventario({NumUnico, EID, NombreA, TipoEquipo, NoSerie, Fecha, Garantia, Marca, Modelo, Observacion, Activo, Color});
+    const newDevice = new inventario({ NumUnico, EID, NombreA, TipoEquipo, NoSerie, Fecha, Garantia, Marca, Modelo, Observacion, Activo, Color });
 
     await newDevice.save();
+
+    res.status(200).send(newDevice);
 
 }
 
