@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 exports.getIn = async (req, res) => {
 
-    const Inventario = inventario.find();
+    const Inventario = await inventario.find();
 
     if (!Inventario) return res.status(401).send(err)
 

@@ -34,7 +34,7 @@ export class AgregarComponent {
 
   AddDevice(){
     this.apiService.AddDevice(this.equipo).subscribe(x => {
-      this.tr.success("Equipo agregado con exito.")
+      this.tr.success("Equipo agregado con exito.", "Equipo agregado")
     })
   }
 

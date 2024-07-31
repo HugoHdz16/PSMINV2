@@ -58,9 +58,9 @@
               placeholder="Ingrese el nombre del usuario" name="name"  [(ngModel)]="equipo.NombreA">
           </div>
 
-          <div class="form-group">
+          <div class="form-group check">
             <label for="equipmentType">Tipo de Equipo</label>
-            <select class="form-control" id="equipotipo"  name="type"  [(ngModel)]="equipo.TipoEquipo">
+            <select class="form-select" id="equipotipo" title="Equipo"  name="type"  [(ngModel)]="equipo.TipoEquipo" placeholder="Ingrese el tipo de equipo">
               <option>Computadora</option>
               <option>Impresora</option>
               <option>Monitor</option>
@@ -100,7 +100,7 @@
           </div>
           <div class="form-group">
             <label for="equipmentType">Activo o Desincorporado</label>
-            <select class="form-control" id="equipmentType"  name="type" [(ngModel)]="equipo.Activo"> 
+            <select class="form-select" id="equipmentType"  name="type" [(ngModel)]="equipo.Activo"> 
               <option>Activado</option>
               <option>Desincorporado</option>
             </select>

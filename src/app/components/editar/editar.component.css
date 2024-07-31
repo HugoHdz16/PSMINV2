@@ -46,9 +46,9 @@
     margin: 0;
   } 
 
-  body{
+  .body{
     margin-top: 4%; /* Aumenta el margen superior para más separación */
-    background-image: url('/assets/flogin.jpg');
+    background-image: url('../../../assets/flogin.jpg');
   }
 
  .container {

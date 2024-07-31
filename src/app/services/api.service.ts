@@ -27,14 +27,15 @@ export class ApiService {
 
   //consumo de inventario
 
+  //Metodo para agregar un equipo
   AddDevice(device:any){
 
     return this.http.post<any>(this.URL + 'postDev', device);
 
   }
-
-  GetDevice(){
-    return this.http.get(this.URL + '');
+  //Metodo para traer los equipos
+  getInventario(){
+    return this.http.get<any>(this.URL + 'getInv');
   }
 
 }
