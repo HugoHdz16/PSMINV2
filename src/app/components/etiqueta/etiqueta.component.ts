@@ -37,7 +37,7 @@ export class EtiquetaComponent {
     // Generar código de barras
     const barcodeCanvas = document.getElementById('barcode') as HTMLCanvasElement;
     if (barcodeCanvas) {
-      JsBarcode(barcodeCanvas, numeroSerie, {
+      JsBarcode(barcodeCanvas, numeroUnico, {
         format: 'CODE128',
         displayValue: true,
         fontSize: 18
