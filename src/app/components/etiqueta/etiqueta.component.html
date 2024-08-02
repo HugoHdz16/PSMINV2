@@ -35,50 +35,16 @@
     <h6 class="text-center">Complete la información del equipo para generar una etiqueta</h6>
 
 
-    <!-- <form id="etiqueta-form" (submit)="generateLabel($event)" >
+    <form id="etiqueta-form" [formGroup] ="formulario">
 
       <div class="form-group mt-2">
-        <label for="numeroSerie">Número único</label>
-        <input type="text" class="form-control" id="numeroSerie" placeholder="Ingrese el Número único" required>
+        <label for="NoUnico">Número único</label>
+        <input type="text" class="form-control" id="NoUnico" placeholder="Ingrese el Número único" required  formControlName="NoUnico">
       </div>
 
       <div class="form-group">
-        <label for="equipmentType">Dispositivo o Equipo </label>
-        <select class="form-select" id="equipmentType">
-          <option>EID</option>
-          <option>DID</option>
-        </select>
-      </div>
-
-      <div class="form-group mt-2">
-        <label for="numeroSerie">Nombre del Equipo</label>
-        <input type="text" class="form-control" id="numeroSerie" placeholder="Ingrese el número de serie" required>
-      </div>
-
-      <div class="form-group mt-2">
-        <label for="numeroSerie">Número de Serie</label>
-        <input type="text" class="form-control" id="numeroSerie" placeholder="Ingrese el número de serie" required>
-      </div>
-
-      <div class="form-group">
-        <label for="purchaseDate">Fecha de Compra</label>
-        <input type="date" class="form-control" id="purchaseDate">
-      </div>
-
-      <button type="submit" class="btn btn-primary mt-3"> Generar Etiqueta</button>
-    </form> -->
-
-
-    <form id="etiqueta-form" (submit)="generateLabel($event)">
-
-      <div class="form-group mt-2">
-        <label for="numeroUnico">Número único</label>
-        <input type="text" class="form-control" id="numeroUnico" placeholder="Ingrese el Número único" required>
-      </div>
-
-      <div class="form-group">
-        <label for="equipmentType">Dispositivo o Equipo</label>
-        <select class="form-select" id="equipmentType">
+        <label for="equimentType">Dispositivo o Equipo</label>
+        <select class="form-select" id="equimentType" formControlName="equimentType">
           <option value="EID">EID</option>
           <option value="DID">DID</option>
         </select>
@@ -86,33 +52,47 @@
 
       <div class="form-group mt-2">
         <label for="nombreEquipo">Nombre del Equipo</label>
-        <input type="text" class="form-control" id="nombreEquipo" placeholder="Ingrese el nombre del equipo" required>
+        <input type="text" class="form-control" id="nombreEquipo" placeholder="Ingrese el nombre del equipo" required formControlName="nombreEquipo">
       </div>
 
       <div class="form-group mt-2">
-        <label for="numeroSerie">Número de Serie</label>
-        <input type="text" class="form-control" id="numeroSerie" placeholder="Ingrese el número de serie" required>
+        <label for="NoSerie">Número de Serie</label>
+        <input type="text" class="form-control" id="NoSerie" placeholder="Ingrese el número de serie" required formControlName="NoSerie">
       </div>
 
       <div class="form-group">
-        <label for="purchaseDate">Fecha de Compra</label>
-        <input type="date" class="form-control" id="purchaseDate">
+        <label for="Date">Fecha de Compra</label>
+        <input type="date" class="form-control" id="Date" formControlName="Date">
       </div>
 
-      <button type="submit" class="btn btn-primary mt-3">Generar Etiqueta</button>
+      <button type="submit" class="btn btn-primary mt-3" (click)="generarCodigoDeBarras()">Generar Etiqueta</button>
     </form>
+
+
 
     <div id="label" class="mt-4" >
       <h4 class="text-center">Vista Previa de la Etiqueta</h4>
       <div class="d-flex justify-content-center align-items-center mb-3">
-        <canvas id="barcode" width="400" height="100"></canvas>
+
+        <!-- <canvas id="barcode"><svg id="barcode"></svg></canvas> -->
+
+        <div *ngIf="qrCodeDataUrl">
+          <img [src]="qrCodeDataUrl" alt="Código QR" id="qrCodeDataUrl">
+        </div>
+
       </div>
+
+
+
+
       <div class="d-flex justify-content-center align-items-center mt-3">
-        <button (click)="printBarcode()" class="btn btn-success">Imprimir Etiqueta</button>
+        <button class="btn btn-success" (click)="printQRCode()" >Imprimir Etiqueta</button>
       </div>
     </div>
 
   </div>
+
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
