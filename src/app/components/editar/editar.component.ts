@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Inventario } from '../../models/ListInv';
 import { ApiService } from '../../services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class EditarComponent {
 
   Inventario1: Inventario[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private tr: ToastrService) {}
 
   ngOnInit(): void {
     this.getInventario();
@@ -24,6 +25,25 @@ export class EditarComponent {
       this.Inventario1 = data;
 
     });
+  }
+
+
+  Delete(id:any){ 
+
+    this.apiService.DeleteInventario(id).subscribe( data => {
+      this.tr.warning('Equipo eliminado');
+    })
+
+    this.getInventario();
+
+  }
+
+
+  onSelectChange(event: any) {
+    const selectedId = event.target.value;
+    if(selectedId !== "Default" ){
+      this.Delete(selectedId);
+    }
   }
 
   

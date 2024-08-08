@@ -38,4 +38,8 @@ export class ApiService {
     return this.http.get<any>(this.URL + 'getInv');
   }
 
+  DeleteInventario(id: any){
+    return this.http.delete<any>(this.URL + 'DeleteDev' + id)
+  }
+
 }

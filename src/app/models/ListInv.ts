@@ -1,5 +1,6 @@
 export class Inventario 
 {
+    _id?: String;
     NumUnico: String;
     EID: String;
     NombreA: String;
@@ -14,7 +15,8 @@ export class Inventario
     Color: String
 
 
-    constructor(    NumUnico: String,
+    constructor(    
+        NumUnico: String,
         EID: String,
         NombreA: String,
         TipoEquipo: String,
